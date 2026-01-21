@@ -2,6 +2,8 @@
 
 Obsidian 插件，用于对比文件差异，类似 Git diff 的视图。
 
+<img width="2880" height="1704" alt="70821a4cca5d644515d5b321394d01ad" src="https://github.com/user-attachments/assets/769536e8-1d0b-4d85-87ff-342977b9fb8e" />
+
 ## 功能
 
 - 双文件对比：左右分屏显示差异，绿色表示新增，红色表示删除
@@ -37,6 +39,15 @@ Obsidian 插件，用于对比文件差异，类似 Git diff 的视图。
 
 - 仅支持桌面端
 - 对比视图只读
+
+## 示例图
+
+<img width="2870" height="1686" alt="f3c7fcd27a46e34cf373fde24b2c02cc" src="https://github.com/user-attachments/assets/0402ef65-b6b8-47f4-a576-6516c7116a11" />
+
+<img width="500" alt="467833ae6e0a5e72bb34b5c5abe08b95" src="https://github.com/user-attachments/assets/e7397048-4e5b-4ff1-a7d5-11bdabf82183" />
+
+
+
 
 ## License
 
