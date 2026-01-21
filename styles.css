@@ -1,0 +1,493 @@
+/* File Diff Plugin Styles - Split View */
+
+.diff-view-container {
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+}
+
+/* Header */
+.diff-header {
+  padding: 12px 16px;
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.diff-file-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.diff-file-old {
+  background-color: rgba(248, 81, 73, 0.15);
+  border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+.diff-file-new {
+  background-color: rgba(46, 160, 67, 0.15);
+  border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+.diff-file-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.diff-file-name {
+  font-weight: 500;
+  color: var(--text-normal);
+}
+
+.diff-file-delete {
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.diff-file-delete:hover {
+  opacity: 1;
+  background-color: rgba(255, 59, 48, 0.1);
+}
+
+.diff-file-delete svg {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.diff-file-delete:hover svg {
+  color: #ff3b30;
+}
+
+/* 新文件的删除图标显示绿色 */
+.diff-file-new .diff-file-delete:hover {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+.diff-file-new .diff-file-delete:hover svg {
+  color: #2ea043;
+}
+
+/* Stats */
+.diff-stats {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.diff-stat-add {
+  color: #2ea043;
+}
+
+.diff-stat-del {
+  color: #f85149;
+}
+
+/* Split View Content */
+.diff-content-split {
+  display: flex;
+  flex-direction: column;
+}
+
+.diff-row {
+  display: flex;
+  min-height: 22px;
+}
+
+.diff-col {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.diff-col-left {
+  border-right: 3px solid rgba(46, 160, 67, 0.3);
+}
+
+.diff-col-right {
+  /* right column */
+}
+
+/* Line Numbers */
+.diff-line-num {
+  min-width: 45px;
+  padding: 2px 8px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  user-select: none;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* Line Content */
+.diff-line-content {
+  flex: 1;
+  padding: 2px 8px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+}
+
+/* Empty Line (placeholder) */
+.diff-line-empty {
+  background-color: #f0f0f2;
+}
+
+.diff-line-empty .diff-line-num {
+  background-color: #f0f0f2;
+}
+
+.diff-line-empty .diff-line-content {
+  background-color: #f0f0f2;
+}
+
+/* Added Line (Green) - right side only */
+.diff-line-add {
+  background-color: #e5f9f2;
+}
+
+.diff-line-add .diff-line-num {
+  background-color: #e5f9f2;
+  color: #2ea043;
+}
+
+.diff-line-add .diff-line-content {
+  background-color: #e5f9f2;
+}
+
+/* Removed Line (Red) - left side only */
+.diff-line-del {
+  background-color: #feebeb;
+}
+
+.diff-line-del .diff-line-num {
+  background-color: #feebeb;
+  color: var(--text-muted);
+}
+
+.diff-line-del .diff-line-content {
+  background-color: #feebeb;
+}
+
+/* Modified Line - Old (left side) */
+.diff-line-modified-old {
+  background-color: #feebeb;
+}
+
+.diff-line-modified-old .diff-line-num {
+  background-color: #feebeb;
+  color: var(--text-muted);
+}
+
+.diff-line-modified-old .diff-line-content {
+  background-color: #feebeb;
+}
+
+/* Modified Line - New (right side) */
+.diff-line-modified-new {
+  background-color: #e5f9f2;
+}
+
+.diff-line-modified-new .diff-line-num {
+  background-color: #e5f9f2;
+  color: #2ea043;
+}
+
+.diff-line-modified-new .diff-line-content {
+  background-color: #e5f9f2;
+}
+
+/* Character-level diff highlights */
+.diff-char-del {
+  background-color: #faa5a5;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.diff-char-add {
+  background-color: rgba(46, 160, 67, 0.3);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* No Change Message */
+.diff-no-change {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  margin: 20px;
+}
+
+/* Dark Theme Adjustments */
+.theme-dark .diff-col-left {
+  border-right: 3px solid rgba(46, 160, 67, 0.4);
+}
+
+.theme-dark .diff-line-num {
+  color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .diff-line-add {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+.theme-dark .diff-line-add .diff-line-num {
+  background-color: rgba(46, 160, 67, 0.22);
+}
+
+.theme-dark .diff-line-add .diff-line-content {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+.theme-dark .diff-line-del {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-del .diff-line-num {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-del .diff-line-content {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-modified-old {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-modified-old .diff-line-num {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-modified-old .diff-line-content {
+  background-color: rgba(254, 235, 235, 0.15);
+}
+
+.theme-dark .diff-line-empty {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .diff-line-empty .diff-line-num {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .diff-line-empty .diff-line-content {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .diff-char-del {
+  background-color: rgba(250, 165, 165, 0.4);
+}
+
+.theme-dark .diff-char-add {
+  background-color: rgba(46, 160, 67, 0.45);
+}
+
+/* Hover effect */
+.diff-row:hover .diff-col {
+  filter: brightness(0.97);
+}
+
+.theme-dark .diff-row:hover .diff-col {
+  filter: brightness(1.05);
+}
+
+/* Scrollbar */
+.diff-view-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.diff-view-container::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+.diff-view-container::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+.diff-view-container::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Synchronized scroll hint */
+.diff-content-split {
+  overflow: visible;
+}
+
+/* ========== Multi-File Diff View Styles ========== */
+
+.multi-diff-view .multi-diff-header {
+  flex-wrap: wrap;
+}
+
+.multi-diff-view .diff-file-info {
+  background-color: rgba(100, 149, 237, 0.15);
+  border: 1px solid rgba(100, 149, 237, 0.4);
+}
+
+.multi-diff-view .diff-file-0 {
+  background-color: rgba(248, 81, 73, 0.15);
+  border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+.multi-diff-view .diff-file-1 {
+  background-color: rgba(46, 160, 67, 0.15);
+  border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+.multi-diff-view .diff-file-2 {
+  background-color: rgba(100, 149, 237, 0.15);
+  border: 1px solid rgba(100, 149, 237, 0.4);
+}
+
+.multi-diff-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.multi-diff-content .diff-row {
+  display: flex;
+}
+
+.multi-diff-content .diff-col {
+  flex: 1;
+  border-right: 1px solid var(--background-modifier-border);
+}
+
+.multi-diff-content .diff-col:last-child {
+  border-right: none;
+}
+
+/* 唯一不同的行（只有这个文件有这行内容） */
+.diff-line-unique {
+  background-color: rgba(255, 193, 7, 0.2);
+}
+
+.diff-line-unique .diff-line-num {
+  background-color: rgba(255, 193, 7, 0.25);
+  color: #856404;
+}
+
+.diff-line-unique .diff-line-content {
+  background-color: rgba(255, 193, 7, 0.2);
+}
+
+/* 部分相同（有些文件相同，有些不同） */
+.diff-line-partial {
+  background-color: rgba(100, 149, 237, 0.12);
+}
+
+.diff-line-partial .diff-line-num {
+  background-color: rgba(100, 149, 237, 0.18);
+  color: #4169e1;
+}
+
+.diff-line-partial .diff-line-content {
+  background-color: rgba(100, 149, 237, 0.12);
+}
+
+/* Dark theme for multi-diff */
+.theme-dark .diff-line-unique {
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+.theme-dark .diff-line-unique .diff-line-num {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.theme-dark .diff-line-unique .diff-line-content {
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+.theme-dark .diff-line-partial {
+  background-color: rgba(100, 149, 237, 0.15);
+}
+
+.theme-dark .diff-line-partial .diff-line-num {
+  background-color: rgba(100, 149, 237, 0.2);
+  color: #6495ed;
+}
+
+.theme-dark .diff-line-partial .diff-line-content {
+  background-color: rgba(100, 149, 237, 0.15);
+}
+
+/* ========== Similar Files Modal Styles ========== */
+
+.similar-files-modal {
+  max-width: 600px;
+}
+
+.similar-files-hint {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.similar-files-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.similar-file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.similar-file-item:hover {
+  background-color: var(--background-secondary);
+}
+
+.similar-file-item.current-file {
+  background-color: var(--background-secondary);
+  opacity: 0.7;
+}
+
+.similar-file-item input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+.similar-file-item span {
+  word-break: break-all;
+  font-size: 13px;
+}
