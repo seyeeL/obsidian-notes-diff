@@ -1,0 +1,11 @@
+{
+  "id": "notes-diff",
+  "name": "Notes Diff",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Compare two files and show differences in Git-style diff view (green for additions, red for deletions)",
+  "author": "Seyee",
+  "authorUrl": "https://github.com/seyeeL",
+  "fundingUrl": "",
+  "isDesktopOnly": true
+}
